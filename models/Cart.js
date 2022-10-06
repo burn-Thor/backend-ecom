@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 
 const CartSchema = new mongoose.Schema(
     {
-        title: {type: String, required:true, unique:true},  
-        description: {type:String, required:true},
-        img: {type:String, required:true},
-        size: {type:String},
-        colour: {type:String},
-        price: {type:Number, required:true},
-     
+        userId: {type: String, required:true, unique:true},  
+        products: [
+            {
+                productId:{type:String},
+                quantity:{type:Number, default:1}
+            }
+        ]    
     }, {timestamps:true}
     )
 
